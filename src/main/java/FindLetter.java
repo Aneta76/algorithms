@@ -32,13 +32,27 @@ public class FindLetter {
         System.out.println(reverse);
     }
 
+    public void changeLetters(String text) {
+        String lowerCaseText = text.toLowerCase();
+        String modifiedString = "";
+        for (int i = 0; i < lowerCaseText.length(); i++) {
+            if (i % 2 == 0) {
+                modifiedString = modifiedString + Character.toLowerCase(lowerCaseText.charAt(i));
+            } else {
+                modifiedString = modifiedString + Character.toUpperCase(lowerCaseText.charAt(i));
+            }
+        }
+        System.out.println(modifiedString);
+
+    }
+
     public static void main(String[] args) {
         FindLetter findLetter = new FindLetter();
         //findLetter.findAa("AsdfaGahA");
-        findLetter.reverse("ABCDEF");
-
+        //findLetter.reverse("ABCDEF");
+        findLetter.changeLetters("aaAAAAAAaa");
     }
 }
-
+// Napisz algorytm zamieniający dowolny ciąg znaków według konwencji: "aAAAAAAAaA" -> "AaAaAaAaAa" (nieparzyste litery duże, parzyste litery małe)
 // Napisz algorytm, który zamieni ciąg znaków "ABCDEF" na "FEDCBA". Wynik zamiany zapisz do zmiennej.
 // Napisz algorytm, który z ciągu znaków wyszuka wszystkie litery 'a' (wielkość litery bez znaczenia) i wypisze ich pozycje.
