@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class ArrayTask {
 
     public void reverseArray() {
@@ -20,19 +22,34 @@ public class ArrayTask {
                 min = tab[i];
             }
         }
-
         System.out.println(max);
         System.out.println(min);
+    }
 
+    public void findNumbers() {
+        int[][] tab = new int[10][10];
+        Random random = new Random();
+
+        for (int i = 0; i < tab.length; i++) {
+            for (int j = 0; j < tab[i].length; j++) {
+                tab[i][j] = random.nextInt(100) + 1;
+                if (tab[i][j] > 50) {
+                    System.out.print(tab[i][j] + " ");
+                }
+            }
+            System.out.println();
+        }
     }
 
     public static void main(String[] args) {
         ArrayTask arrayTask = new ArrayTask();
         // arrayTask.reverseArray();
-        arrayTask.minAndMax();
+        //arrayTask.minAndMax();
+        arrayTask.findNumbers();
     }
 }
 
+// Wypisz z dwuwymiarowej tablicy 10x10 liczby większe od 50. Tablicę wypełnij losowymi liczbami z zakresu 1-100.
 
 // Napisz algorytm, który z tablicy elementów wypisze jej największy i najmniejszy element. Tablicę zahardcode'uj lub wypełnij liczbami losowymi (1-100].
 

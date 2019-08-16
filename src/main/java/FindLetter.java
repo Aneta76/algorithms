@@ -43,7 +43,6 @@ public class FindLetter {
             }
         }
         System.out.println(modifiedString);
-
     }
 
     public static void main(String[] args) {
@@ -53,6 +52,7 @@ public class FindLetter {
         findLetter.changeLetters("aaAAAAAAaa");
     }
 }
+
 // Napisz algorytm zamieniający dowolny ciąg znaków według konwencji: "aAAAAAAAaA" -> "AaAaAaAaAa" (nieparzyste litery duże, parzyste litery małe)
 // Napisz algorytm, który zamieni ciąg znaków "ABCDEF" na "FEDCBA". Wynik zamiany zapisz do zmiennej.
 // Napisz algorytm, który z ciągu znaków wyszuka wszystkie litery 'a' (wielkość litery bez znaczenia) i wypisze ich pozycje.

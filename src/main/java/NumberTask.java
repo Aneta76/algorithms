@@ -42,6 +42,7 @@ public class NumberTask {
         }
     }
 
+
     public void pickUpNumber() {
         Random random = new Random();
         int randomNumber = random.nextInt(99) + 1;
@@ -64,10 +65,12 @@ public class NumberTask {
 
     public static void main(String[] args) {
         NumberTask numberTask = new NumberTask();
-        // numberTask.count();
+        //numberTask.count();
         numberTask.pickUpNumber();
     }
 }
+
+// napisz algorytm zamieniajacy liczbe dziesietna na binarna.
 
 // Napisz algorytm, który wybierze jedną liczbę z zakresu od [1-99]. Program pyta użytkownika o liczbę do momentu,
 // gdy użytkownik zgadnie, jaką liczbę wylosował program na początku. Program informuje użytkownika, czy podał liczbę za dużą względem wylosowanej, czy za małą.
@@ -80,3 +83,4 @@ public class NumberTask {
 //        setki: 2
 //        dziesiątki: 5
 //        jedności: 1
+
