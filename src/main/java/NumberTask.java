@@ -63,10 +63,25 @@ public class NumberTask {
         System.out.println("Congratulations, magic number is excatly " + randomNumber);
     }
 
+    public void countBin(int number) {
+        String binNumber = "";
+        do {
+            if (number % 2 == 0) {
+                binNumber = "0" + binNumber;
+            } else {
+                binNumber = "1" + binNumber;
+            }
+            number = number / 2;
+        } while (number != 0);
+        System.out.println(binNumber);
+    }
+
+
     public static void main(String[] args) {
         NumberTask numberTask = new NumberTask();
         //numberTask.count();
-        numberTask.pickUpNumber();
+        //numberTask.pickUpNumber();
+        numberTask.countBin(23);
     }
 }
 
