@@ -95,15 +95,56 @@ public class ArrayTask {
         System.out.println(Arrays.toString(oddNumbers));
     }
 
+    public void createArrays(int firstNumber, int delta, int length) {
+//        int[] positiveNumbers = new int[length];
+//        int[] negativeNumbers = new int[length];
+//        int k = 0;
+//
+//        for (int i = firstNumber; k < length; i = i + delta) {
+//            positiveNumbers[k] = i;
+//            k++;
+//        }
+//        System.out.println(Arrays.toString(positiveNumbers));
+//        k = 0;
+//        for (int i = firstNumber; k < length; i = i + (-delta)) {
+//            negativeNumbers[k] = i;
+//            k++;
+//        }
+//        System.out.println(Arrays.toString(negativeNumbers));
+        int[][] numbers = new int[2][length];
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < numbers[i].length; j++) {
+                numbers[i][j] = firstNumber + (delta * j);
+                if (i == 1) {
+                    numbers[i][j] = firstNumber - (delta * j);
+                }
+                System.out.print(Arrays.toString(numbers[i]));
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         ArrayTask arrayTask = new ArrayTask();
         // arrayTask.reverseArray();
         //arrayTask.minAndMax();
         // arrayTask.findNumbers();
         // arrayTask.mergeArrays();
-        arrayTask.groupEvenAndOdd();
+        //arrayTask.groupEvenAndOdd();
+        arrayTask.createArrays(1, 2, 5);
     }
 }
+// stwórz algorytm, który utworzy jednocześnie dwa ciągi liczbowe - jeden rosnący, drugi malejący.
+//        Użytkownik jako parametry metody podaje punkt startowy, przyrost wartości oraz długość ciągów.
+//
+//        Przykład:
+//        wartość początkowa: 1
+//        przyrost: 2
+//        długość ciągów: 5
+//
+//        Wynik:
+//        ciąg rosnący:  1  3  5  7  9
+//        ciąg malejący: 1 -1 -3 -5 -7
 
 // Dana jest tablica 5x5, wypełniona liczbami całkowitymi z zakresu 1-100.
 // Rozdziel wylosowane liczby z tablicy na nieparzyste i parzyste.
