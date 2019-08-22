@@ -2,10 +2,15 @@ public class CaesarCode {
 
     public void encode(String text, int key) {
         char newChar;
+        int asciiNewChar;
         String encodedText = "";
-        for (int i = 0; i < text.length(); i++) {
-            if (text.charAt(i) != ' ') {
-                int asciiNewChar = (int) text.charAt(i) + key;
+        String upperCaseText = text.toUpperCase();
+        for (int i = 0; i < upperCaseText.length(); i++) {
+            if (upperCaseText.charAt(i) != ' ') {
+                asciiNewChar = (int) upperCaseText.charAt(i) + key;
+                if (asciiNewChar > 90) {
+                    asciiNewChar = 64 + asciiNewChar - 90;
+                }
                 newChar = (char) asciiNewChar;
             } else {
                 newChar = ' ';
@@ -15,9 +20,29 @@ public class CaesarCode {
         System.out.println(encodedText);
     }
 
+    public void decode(String text, int key) {
+        int asciiDecodedChar;
+        char newChar;
+        String decodedText = "";
+        String upperCaseText = text.toUpperCase();
+        for (int i = 0; i < upperCaseText.length(); i++) {
+            if ((int) upperCaseText.charAt(i) - key > 65) {
+                newChar = (char) ((int) upperCaseText.charAt(i) - key);
+            } else if (upperCaseText.charAt(i) != ' ') {
+                asciiDecodedChar = (int) upperCaseText.charAt(i) + 26 - key;
+                newChar = (char) asciiDecodedChar;
+            } else {
+                newChar = ' ';
+            }
+            decodedText = decodedText + newChar;
+        }
+        System.out.println(decodedText);
+    }
+
     public static void main(String[] args) {
         CaesarCode caesarCode = new CaesarCode();
-        caesarCode.encode("ALA MA KOTA", 2);
+        //caesarCode.encode("XY Z", 5);
+        caesarCode.decode("ABC", 3);
     }
 }
 
