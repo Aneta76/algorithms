@@ -63,7 +63,7 @@ public class NumberTask {
         System.out.println("Congratulations, magic number is excatly " + randomNumber);
     }
 
-    public void countBin(int number) {
+    public int countBin(int number) {
         String binNumber = "";
         do {
             if (number % 2 == 0) {
@@ -73,7 +73,62 @@ public class NumberTask {
             }
             number = number / 2;
         } while (number != 0);
-        System.out.println(binNumber);
+
+        return Integer.parseInt(binNumber);
+    }
+
+    public void countHex(String binNumber) {
+        int i = binNumber.length() - 1;
+        int temp = 0;
+        int dec = 0;
+        while (i >= 0) {
+            if (binNumber.charAt(i) == '1') {
+                if (i == 3) {
+                    temp = 1;
+                }
+                if (i == 2) {
+                    temp = 2;
+                }
+                if (i == 1) {
+                    temp = 4;
+                }
+                if (i == 0) {
+                    temp = 8;
+                }
+                dec = dec + temp;
+            }
+            i--;
+        }
+        System.out.println("dec " + dec);
+        int wynik = 0;
+        String hexNumber = "";
+        if (dec < 16) {
+            wynik = dec % 16;
+            if (wynik == 10) {
+                hexNumber = "A";
+            }
+            if (wynik == 11) {
+                hexNumber = "B";
+            }
+            if (wynik == 12) {
+                hexNumber = "C";
+            }
+            if (wynik == 13) {
+                hexNumber = "D";
+            }
+            if (wynik == 14) {
+                hexNumber = "E";
+            }
+            if (wynik == 15) {
+                hexNumber = "F";
+            }
+        }
+        if (dec<10){
+            hexNumber=hexNumber+dec;
+
+        }
+        System.out.println("hex " + hexNumber);
+
     }
 
 
@@ -81,11 +136,14 @@ public class NumberTask {
         NumberTask numberTask = new NumberTask();
         //numberTask.count();
         //numberTask.pickUpNumber();
-        numberTask.countBin(23);
+        // numberTask.countBin(23);
+        numberTask.countHex("0101");
+
     }
 }
 
 // napisz algorytm zamieniajacy liczbe dziesietna na binarna.
+// napisz algorytm zamieniajacy liczbe dziesietna na hex.
 
 // Napisz algorytm, który wybierze jedną liczbę z zakresu od [1-99]. Program pyta użytkownika o liczbę do momentu,
 // gdy użytkownik zgadnie, jaką liczbę wylosował program na początku. Program informuje użytkownika, czy podał liczbę za dużą względem wylosowanej, czy za małą.
