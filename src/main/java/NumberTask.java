@@ -63,7 +63,7 @@ public class NumberTask {
         System.out.println("Congratulations, magic number is excatly " + randomNumber);
     }
 
-    public int countBin(int number) {
+    public int countDecToBin(int number) {
         String binNumber = "";
         do {
             if (number % 2 == 0) {
@@ -77,58 +77,57 @@ public class NumberTask {
         return Integer.parseInt(binNumber);
     }
 
-    public void countHex(String binNumber) {
-        int i = binNumber.length() - 1;
-        int temp = 0;
-        int dec = 0;
-        while (i >= 0) {
-            if (binNumber.charAt(i) == '1') {
-                if (i == 3) {
-                    temp = 1;
-                }
-                if (i == 2) {
-                    temp = 2;
-                }
-                if (i == 1) {
-                    temp = 4;
-                }
-                if (i == 0) {
-                    temp = 8;
-                }
-                dec = dec + temp;
-            }
-            i--;
-        }
-        System.out.println("dec " + dec);
-        int wynik = 0;
+    public void countDecToHex(int decimalNumber) {
+        String binaryString = Integer.toBinaryString(decimalNumber);
         String hexNumber = "";
-        if (dec < 16) {
-            wynik = dec % 16;
-            if (wynik == 10) {
-                hexNumber = "A";
+        int k = 0;
+        while (binaryString.length() % 4 != 0) {
+            binaryString = "0" + binaryString;
+        }
+        for (int i = 4; i <= binaryString.length(); i = i + 4) {
+            int result = 0;
+            String part = binaryString.substring(binaryString.length() - i, binaryString.length() - k);
+            k = k + 4;
+            System.out.println(part);
+            int weightOfNumber = 8;
+            for (int j = 0; j < part.length(); j++) {
+                if (part.charAt(j) == '1') {
+                    result = result + weightOfNumber;
+                }
+                weightOfNumber = weightOfNumber / 2;
             }
-            if (wynik == 11) {
-                hexNumber = "B";
-            }
-            if (wynik == 12) {
-                hexNumber = "C";
-            }
-            if (wynik == 13) {
-                hexNumber = "D";
-            }
-            if (wynik == 14) {
-                hexNumber = "E";
-            }
-            if (wynik == 15) {
-                hexNumber = "F";
+            if (result > 9) {
+                switch (result) {
+                    case 10: {
+                        hexNumber = "A" + hexNumber;
+                    }
+                    break;
+                    case 11: {
+                        hexNumber = "B" + hexNumber;
+                    }
+                    break;
+                    case 12: {
+                        hexNumber = "C" + hexNumber;
+                    }
+                    break;
+                    case 13: {
+                        hexNumber = "D" + hexNumber;
+                    }
+                    break;
+                    case 14: {
+                        hexNumber = "E" + hexNumber;
+                    }
+                    break;
+                    case 15: {
+                        hexNumber = "F" + hexNumber;
+                    }
+                    break;
+                }
+            } else {
+                hexNumber = result + hexNumber;
             }
         }
-        if (dec<10){
-            hexNumber=hexNumber+dec;
-
-        }
-        System.out.println("hex " + hexNumber);
-
+        System.out.println("hex: "+hexNumber);
     }
 
 
@@ -136,8 +135,7 @@ public class NumberTask {
         NumberTask numberTask = new NumberTask();
         //numberTask.count();
         //numberTask.pickUpNumber();
-        // numberTask.countBin(23);
-        numberTask.countHex("0101");
+        numberTask.countDecToHex(256);
 
     }
 }
