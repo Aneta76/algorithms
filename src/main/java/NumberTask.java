@@ -127,7 +127,26 @@ public class NumberTask {
                 hexNumber = result + hexNumber;
             }
         }
-        System.out.println("hex: "+hexNumber);
+        System.out.println("hex: " + hexNumber);
+    }
+
+    public void findNumber(int number) {
+        int start = 0;
+        int border = 1000;
+        int i = 0;
+        int half = 0;
+        while (half != number) {
+            half = (start + border) / 2;
+            if (number > half) {
+                start = half;
+
+            }
+            if (number < half) {
+                border = half;
+            }
+            i++;
+        }
+        System.out.println("Number : " + half + " found in " + i + " iteration");
     }
 
 
@@ -135,10 +154,12 @@ public class NumberTask {
         NumberTask numberTask = new NumberTask();
         //numberTask.count();
         //numberTask.pickUpNumber();
-        numberTask.countDecToHex(256);
+        //numberTask.countDecToHex(256);
+        numberTask.findNumber(125);
 
     }
 }
+//przeszukiwanie binarne
 
 // napisz algorytm zamieniajacy liczbe dziesietna na binarna.
 // napisz algorytm zamieniajacy liczbe dziesietna na hex.
