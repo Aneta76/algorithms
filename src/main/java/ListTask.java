@@ -1,6 +1,4 @@
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Random;
+import java.util.*;
 
 public class ListTask {
 
@@ -57,14 +55,36 @@ public class ListTask {
         System.out.println(Arrays.toString(numbersList.toArray()));
     }
 
+    public void findSameNumbers() {
+        List<Integer> firstList = new ArrayList(Arrays.asList(1, 4, 12, 8, 9, 34, 76, 67, 55, 99));
+        List<Integer> secondList = new ArrayList(Arrays.asList(1, 23, 42, 68, 9, 39, 97, 54, 55, 84));
+        List<Integer> duplicateNumbersList = new ArrayList();
+        for (int i = 0; i < firstList.size(); i++) {
+            for (int j = 0; j < secondList.size(); j++) {
+                if (firstList.get(i) == secondList.get(j)) {
+                    duplicateNumbersList.add(secondList.get(j));
+                }
+            }
+        }
+        System.out.println(Arrays.asList(duplicateNumbersList));
+    }
 
     public static void main(String[] args) {
         ListTask listTask = new ListTask();
         // listTask.removeItem();
         // listTask.removeHighest();
-        listTask.createUniqueElementList();
+        //listTask.createUniqueElementList();
+        listTask.findSameNumbers();
     }
 }
+//=========================================
+//
+//        dwie listy 10 el., liczby 1-100 (zahardcoduj najlepiej)
+//        min. 3 liczby muszą siępowtórzyć w obu listach
+//
+//        zadanie: wypisz liczby, które się powtarzają w obu listach.
+//
+//        ===========================================
 
 //    napisz algorytm, który losuje 15 liczb z zakresu 1-20. Program zapisuje liczby do listy, ale tylko w wypadku,
 //        jeżeli ta lista nie zawiera jeszcze danej liczby (nie mogą się powtórzyć)
