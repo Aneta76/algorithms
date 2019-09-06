@@ -77,6 +77,23 @@ public class NumberTask {
         return Integer.parseInt(binNumber);
     }
 
+
+    public String countDecToBin2(int number) {
+        String binaryString = "";
+        int max = 2048;
+        do {
+            if (number >= max) {
+                binaryString = binaryString + "1";
+                number = number - max;
+            } else {
+                binaryString = binaryString + "0";
+            }
+            max = max / 2;
+        } while (max != 0);
+        return binaryString;
+    }
+
+
     public void countDecToHex(int decimalNumber) {
         String binaryString = Integer.toBinaryString(decimalNumber);
         String hexNumber = "";
@@ -155,7 +172,8 @@ public class NumberTask {
         //numberTask.count();
         //numberTask.pickUpNumber();
         //numberTask.countDecToHex(256);
-        numberTask.findNumber(125);
+        // numberTask.findNumber(125);
+        System.out.println(numberTask.countDecToBin2(25));
 
     }
 }
