@@ -139,6 +139,28 @@ public class Printing {
             System.out.println();
         }
     }
+    
+    public void printSquareWithNumbers(){
+        for (int i = 0; i < 5 ; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public void printSquareWithWeirdSymbols(){
+        for (int i = 0; i <5; i++) {
+            for (int j = 0; j < 5; j++) {
+                if((i+j==4) || (i==j)){
+                    System.out.print("* ");
+                } else {
+                    System.out.print("# ");
+                }
+            }
+            System.out.println();
+        }
+    }
 
     public static void main(String[] args) {
         Printing printing = new Printing();
@@ -152,9 +174,19 @@ public class Printing {
         // printing.printSquare2();
         // printing.printTriangleWithNumbers();
         //printing.printStairs();
-        printing.printTree();
+        //printing.printTree();
+       // printing.printSquareWithNumbers();
+        printing.printSquareWithWeirdSymbols();
     }
 }
+
+
+// * # # # *
+// # * # * #
+// # # * # #
+// # * # * #
+// * # # # *
+
 //*
 //* *
 //* * *
@@ -225,3 +257,8 @@ public class Printing {
 //        *****
 //        *******
 
+// 0 0 0 0 0
+// 1 1 1 1 1
+// 2 2 2 2 2
+// 3 3 3 3 3
+// 4 4 4 4 4
