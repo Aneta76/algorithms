@@ -139,9 +139,9 @@ public class Printing {
             System.out.println();
         }
     }
-    
-    public void printSquareWithNumbers(){
-        for (int i = 0; i < 5 ; i++) {
+
+    public void printSquareWithNumbers() {
+        for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 System.out.print(i + " ");
             }
@@ -149,14 +149,26 @@ public class Printing {
         }
     }
 
-    public void printSquareWithWeirdSymbols(){
-        for (int i = 0; i <5; i++) {
+    public void printSquareWithWeirdSymbols() {
+        for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
-                if((i+j==4) || (i==j)){
+                if ((i + j == 4) || (i == j)) {
                     System.out.print("* ");
                 } else {
                     System.out.print("# ");
                 }
+            }
+            System.out.println();
+        }
+    }
+
+    public void reverseTriangle() {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < 5-i; j++) {
+                System.out.print("* ");
             }
             System.out.println();
         }
@@ -175,11 +187,16 @@ public class Printing {
         // printing.printTriangleWithNumbers();
         //printing.printStairs();
         //printing.printTree();
-       // printing.printSquareWithNumbers();
-        printing.printSquareWithWeirdSymbols();
+        // printing.printSquareWithNumbers();
+        //printing.printSquareWithWeirdSymbols();
+        printing.reverseTriangle();
     }
 }
-
+// * * * * *
+//  * * * *
+//   * * *
+//    * *
+//     *
 
 // * # # # *
 // # * # * #
