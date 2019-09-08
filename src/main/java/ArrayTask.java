@@ -124,6 +124,17 @@ public class ArrayTask {
         }
     }
 
+    public void subtractNumbers() {
+        int[] tab = new int[100];
+        for (int i = 0; i < tab.length; i++) {
+            tab[i] = i + 1;
+        }
+        for (int i = 0; i < tab.length / 2; i++) {
+            int result = tab[tab.length - i - 1] - tab[i];
+            System.out.print(result + " ,");
+        }
+    }
+
     public static void main(String[] args) {
         ArrayTask arrayTask = new ArrayTask();
         // arrayTask.reverseArray();
@@ -131,9 +142,19 @@ public class ArrayTask {
         // arrayTask.findNumbers();
         // arrayTask.mergeArrays();
         //arrayTask.groupEvenAndOdd();
-        arrayTask.createArrays(1, 2, 5);
+        //arrayTask.createArrays(1, 2, 5);
+        arrayTask.subtractNumbers();
     }
 }
+// Wypełnij tablicę liczbami od 1-100 (po kolei, nie losowe).
+// Następnie odejmuj liczby od siebie parami, zaczynając jednocześnie od początku i // końca tablicy, czyli:
+// 100 - 1 = 99
+// 99 - 2 = 97
+// 98 - 3 = 95
+// 97 - 4 = 93
+// ...
+
+
 // stwórz algorytm, który utworzy jednocześnie dwa ciągi liczbowe - jeden rosnący, drugi malejący.
 //        Użytkownik jako parametry metody podaje punkt startowy, przyrost wartości oraz długość ciągów.
 //
