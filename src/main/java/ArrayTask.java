@@ -135,6 +135,19 @@ public class ArrayTask {
         }
     }
 
+    public void findDuplicate() {
+        int[] tab = {1, 2, 3, 4, 7, 3, 6, 9, 2, 1};
+        for (int i = 0; i < tab.length; i++) {
+            for (int j = i; j < tab.length; j++) {
+                if (i != j) {
+                    if (tab[i] == tab[j]) {
+                        System.out.println(tab[i]);
+                    }
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
         ArrayTask arrayTask = new ArrayTask();
         // arrayTask.reverseArray();
@@ -143,9 +156,18 @@ public class ArrayTask {
         // arrayTask.mergeArrays();
         //arrayTask.groupEvenAndOdd();
         //arrayTask.createArrays(1, 2, 5);
-        arrayTask.subtractNumbers();
+        //arrayTask.subtractNumbers();
+        arrayTask.findDuplicate();
     }
 }
+// Z 10-elementowej tablicy integerów wypisz liczby, które się powtarzają.
+// np.
+// 1,1,2,3,4,5,6,7,8,9
+// Powtarzająca się liczba to: 1
+//
+// 1,1,4,4,6,2,5,7,4,7
+// Powtarzająca się liczba to: 1, 4, 7
+
 // Wypełnij tablicę liczbami od 1-100 (po kolei, nie losowe).
 // Następnie odejmuj liczby od siebie parami, zaczynając jednocześnie od początku i // końca tablicy, czyli:
 // 100 - 1 = 99
