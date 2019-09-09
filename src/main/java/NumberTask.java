@@ -168,6 +168,25 @@ public class NumberTask {
         System.out.println("Number : " + half + " found in " + i + " iteration");
     }
 
+    public void sumNumbers(int number) {
+        String numberString = Integer.toString(number);
+        int result = 0;
+        for (int i = 0; i < numberString.length(); i++) {
+            int partOfTheNumber = Character.getNumericValue(numberString.charAt(i));
+            result = result + partOfTheNumber;
+        }
+        System.out.println(result);
+    }
+
+    public void addBinaryNumbers(String firstNumber, String secondNumber) {
+        String resultString = "";
+        int result = 0;
+        int numberOne = Integer.parseInt(firstNumber, 2);
+        int numberTwo = Integer.parseInt(secondNumber, 2);
+        result = numberOne + numberTwo;
+        System.out.println(countDecToBin(result));
+    }
+
 
     public static void main(String[] args) {
         NumberTask numberTask = new NumberTask();
@@ -175,10 +194,22 @@ public class NumberTask {
         //numberTask.pickUpNumber();
         //numberTask.countDecToHex(256);
         // numberTask.findNumber(125);
-        System.out.println(numberTask.countDecToBin2(2555));
+        // System.out.println(numberTask.countDecToBin2(2555));
+        //numberTask.sumNumbers(123456);
+        numberTask.addBinaryNumbers("1111", "1001");
 
     }
 }
+// Wykonaj dodawanie dwóch liczb binarnych: 1111 oraz 1001
+// bez konwersji na liczby dziesiętne
+
+//    Dla dowolnej liczby 5-cyfrowej podanej przez użytkownika policz sumę jej wszystkich cyfr
+//
+//        przykład:
+//        34324
+//
+//        3+4+3+2+4 = 16
+
 //przeszukiwanie binarne
 
 // napisz algorytm zamieniajacy liczbe dziesietna na binarna.
