@@ -69,14 +69,52 @@ public class ListTask {
         System.out.println(Arrays.asList(duplicateNumbersList));
     }
 
+    public void switchValues(int n) {
+        List<Integer> firstList = new ArrayList(n);
+        List<Integer> secondList = new ArrayList(n);
+        Random random = new Random();
+        for (int i = 0; i < n; i++) {
+            int randomNumber = random.nextInt(100) + 1;
+            firstList.add(randomNumber);
+            randomNumber = random.nextInt(100) + 1;
+            secondList.add(randomNumber);
+        }
+        System.out.println(firstList.toString());
+        System.out.println(secondList.toString());
+        for (int i = 0; i < n; i++) {
+            int firstValue = firstList.get(i);
+            int secondValue = secondList.get(i);
+            if ((firstValue + secondValue) % 2 != 0) {
+                int temp = firstValue;
+                firstValue = secondValue;
+                firstList.set(i, firstValue);
+                secondValue = temp;
+                secondList.set(i, secondValue);
+            }
+        }
+        System.out.println(firstList.toString());
+        System.out.println(secondList.toString());
+    }
+
     public static void main(String[] args) {
         ListTask listTask = new ListTask();
         // listTask.removeItem();
         // listTask.removeHighest();
         //listTask.createUniqueElementList();
-        listTask.findSameNumbers();
+        //listTask.findSameNumbers();
+        listTask.switchValues(10);
     }
 }
+// Dwie listy integerów (10-el) wypełnione liczbami losowymi od 1-100
+// Wyświetl obie listy
+// Jeżeli suma liczb na danych pozycjach jest nieparzysta, to zamień te elementy miejscami
+//
+// Lista 1: 4,7,2, ...
+// Lista 2: 1,3,3, ...
+//
+// Wynik:
+// Lista 1: 1,7,3, ...
+// Lista 2: 4,3,2, ...
 //=========================================
 //
 //        dwie listy 10 el., liczby 1-100 (zahardcoduj najlepiej)

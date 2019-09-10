@@ -148,6 +148,21 @@ public class ArrayTask {
         }
     }
 
+    public void createTableWithHighestValues() {
+        int[] tabOne = {1, 33, 56, 21, 99, 23, 66, 73, 82, 16};
+        int[] tabTwo = {11, 3, 21, 31, 59, 43, 63, 70, 86, 90};
+        int[] tabThree = new int[10];
+
+        for (int i = 0; i < tabOne.length; i++) {
+            if (tabOne[i] >= tabTwo[i]) {
+                tabThree[i] = tabOne[i];
+            } else {
+                tabThree[i] = tabTwo[i];
+            }
+        }
+        System.out.println(Arrays.toString(tabThree));
+    }
+
     public static void main(String[] args) {
         ArrayTask arrayTask = new ArrayTask();
         // arrayTask.reverseArray();
@@ -157,9 +172,19 @@ public class ArrayTask {
         //arrayTask.groupEvenAndOdd();
         //arrayTask.createArrays(1, 2, 5);
         //arrayTask.subtractNumbers();
-        arrayTask.findDuplicate();
+        //arrayTask.findDuplicate();
+        arrayTask.createTableWithHighestValues();
     }
 }
+// z dwóch tablic integerów (10-el) wypełnionych liczbami od 1-100 (hardcode)
+// przepisz do trzeciej tablicy element,
+// który jest większy na danej pozycji:
+//
+// 1 tablica: 1,2,3,4,5, ...
+// 2 tablica: 4,3,1,5,4, ...
+//
+// wynik: 4,3,3,5,5, ...
+
 // Z 10-elementowej tablicy integerów wypisz liczby, które się powtarzają.
 // np.
 // 1,1,2,3,4,5,6,7,8,9
