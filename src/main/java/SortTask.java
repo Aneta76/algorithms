@@ -19,9 +19,26 @@ public class SortTask {
         System.out.println(Arrays.toString(tab));
     }
 
+    public void insertSort(int[] array) {
+        int j = 0;
+        for (int i = 1; i < array.length; i++) {
+            int key = array[i];
+            j = i - 1;
+
+            while (j >= 0 && key < array[j]) {
+                array[j + 1] = array[j];
+                j--;
+            }
+            array[j + 1] = key;
+        }
+        System.out.println(Arrays.toString(array));
+    }
+
     public static void main(String[] args) {
         SortTask sortTask = new SortTask();
-        sortTask.sortNumbersFromLowest();
+        //sortTask.sortNumbersFromLowest();
+        int[] array = {4, 3, 7, 9, 1, 5};
+        sortTask.insertSort(array);
     }
 }
 //tablica 10 liczb (nie po kolei)
