@@ -20,16 +20,16 @@ public class SortTask {
     }
 
     public void insertSort(int[] array) {
-        int j = 0;
         for (int i = 1; i < array.length; i++) {
             int key = array[i];
-            j = i - 1;
+            int j = i - 1;
 
             while (j >= 0 && key < array[j]) {
+                int temp = array[j + 1];
                 array[j + 1] = array[j];
+                array[j] = temp;
                 j--;
             }
-            array[j + 1] = key;
         }
         System.out.println(Arrays.toString(array));
     }
