@@ -34,11 +34,29 @@ public class SortTask {
         System.out.println(Arrays.toString(array));
     }
 
+    public void selectionSort(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            int minValue = array[i];
+            int minIndex = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < minValue) {
+                    minValue = array[j];
+                    minIndex = j;
+                }
+            }
+            int temp = array[i];
+            array[i] = array[minIndex];
+            array[minIndex] = temp;
+        }
+        System.out.println(Arrays.toString(array));
+    }
+
     public static void main(String[] args) {
         SortTask sortTask = new SortTask();
         //sortTask.sortNumbersFromLowest();
-        int[] array = {4, 3, 7, 9, 1, 5};
-        sortTask.insertSort(array);
+        int[] array = {3, 4, 7, 9, 1, 5};
+        //sortTask.insertSort(array);
+        sortTask.selectionSort(array);
     }
 }
 //tablica 10 liczb (nie po kolei)
